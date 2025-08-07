@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari ID</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Konten utama aplikasi -->
+    <div id="card" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-sm text-center transition-colors duration-500">
+        <h1 id="title" class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 transition-colors duration-500">Masukan Nomor untuk Mencari ID</h1>
+
+        <!-- Kolom input untuk nomor -->
+        <input
+            type="text"
+            id="numberInput"
+            placeholder="Masukkan nomor Anda"
+            class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 transition-colors duration-500"
+        />
+
+        <!-- Tombol untuk memulai pencarian -->
+        <button
+            id="findIdButton"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+        >
+            Cari ID
+        </button>
+
+        <!-- Area untuk menampilkan hasil -->
+        <div id="resultDisplay" class="mt-6 text-lg text-gray-600 font-medium text-left transition-colors duration-500"></div>
+    </div>
+
+    <!-- Konten yang akan muncul setelah "hack" -->
+    <div id="hackedContent" class="hacked-content">
+        <!-- Logo Kuda "Virus" yang akan muncul di atas tombol -->
+        <div id="virusHorseLogo" class="hidden flex flex-col items-center mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 512 512" class="virus-logo">
+                <path d="M495.9 220.7L420.7 296l50.9 50.9c2.3 2.3 3.6 5.3 3.6 8.5s-1.3 6.2-3.6 8.5l-42.3 42.3-50.9-50.9-50.9 50.9 50.9 50.9-42.3 42.3c-2.3 2.3-5.3 3.6-8.5 3.6s-6.2-1.3-8.5-3.6l-50.9-50.9L220.7 495.9c-12.5 12.5-32.8 12.5-45.3 0L15.3 335.3C-5.1 314.9-5.1 281.1 15.3 260.7l42.3-42.3 50.9 50.9 50.9-50.9-50.9-50.9-42.3-42.3c-20.4-20.4-20.4-53.6 0-74L15.3 15.3C35.7-5.1 69-5.1 89.4 15.3L220.7 146.7c12.5 12.5 32.8 12.5 45.3 0L495.9 57.4c20.4-20.4 20.4-53.6 0-74s-53.6-20.4-74 0L260.7 185.9c-12.5 12.5-32.8 12.5-45.3 0L57.4 355.9c-20.4 20.4-20.4 53.6 0 74s53.6 20.4 74 0l161.4-161.4c12.5-12.5 32.8-12.5 45.3 0l161.4 161.4c20.4 20.4 20.4 53.6 0 74s-53.6 20.4-74 0L260.7 301.3c-12.5-12.5-32.8-12.5-45.3 0L57.4 462.6c-20.4 20.4-53.6 20.4-74 0s-20.4-53.6 0-74L185.9 260.7c12.5-12.5 32.8-12.5 45.3 0L396.6 471.9c20.4-20.4 20.4-53.6 0-74s-53.6-20.4-74 0L185.9 296c-12.5-12.5-32.8-12.5-45.3 0L57.4 435.3c-20.4 20.4-20.4 53.6 0 74s53.6 20.4 74 0L260.7 335.3c12.5 12.5 32.8 12.5 45.3 0L462.6 15.3c20.4-20.4 53.6-20.4 74 0s20.4 53.6 0 74L335.3 260.7c-12.5 12.5-32.8 12.5-45.3 0L15.3 220.7z"/>
+            </svg>
+            <p class="text-4xl font-bold text-red-600 mt-2">Trojan Doxing</p>
+        </div>
+
+        <!-- Kontainer untuk tombol baru -->
+        <div id="hackedButtons" class="flex flex-row justify-center mt-8 space-x-4">
+            <button id="checkDatabaseLeft" class="hacked-button hidden">Check Database Account Number</button>
+            <button id="checkDatabaseRight" class="hacked-button hidden">Check Database Account Number</button>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke file JavaScript eksternal -->
+    <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* style.css */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    transition: background-color 1s ease-in-out;
+}
+
+/* Keyframes untuk animasi berputar */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Keyframes untuk animasi latar belakang yang berdenyut (hijau-merah) */
+@keyframes pulse-bg {
+    0% {
+        background-color: #8B0000; /* Merah darah */
+    }
+    50% {
+        background-color: #006400; /* Hijau tua */
+    }
+    100% {
+        background-color: #8B0000;
+    }
+}
+
+/* Keyframes untuk animasi latar belakang berkedip hitam-putih */
+@keyframes flash-bw {
+    0% { background-color: #000000; }
+    100% { background-color: #FFFFFF; }
+}
+
+/* Keyframes untuk animasi fade-in pada konten */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes untuk tombol meluncur dari bawah */
+@keyframes slideInBottom {
+    from {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes untuk efek glitch pada teks */
+@keyframes hacker-glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.05em 0 rgba(0, 255, 0, 0.75), -0.05em 0.025em 0 rgba(0, 0, 255, 0.75);
+    }
+    28% {
+        text-shadow: 0.05em 0.025em 0 rgba(255, 0, 0, 0.75), -0.05em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    42% {
+        text-shadow: 0.025em -0.05em 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), 0.05em 0.025em 0 rgba(0, 0, 255, 0.75);
+    }
+    56% {
+        text-shadow: -0.025em -0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0.05em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    70% {
+        text-shadow: 0.05em 0.05em 0 rgba(255, 0, 0, 0.75), -0.05em 0 0 rgba(0, 255, 0, 0.75), 0.025em 0.025em 0 rgba(0, 0, 255, 0.75);
+    }
+    84% {
+        text-shadow: -0.05em 0 0 rgba(255, 0, 0, 0.75), 0.025em 0.05em 0 rgba(0, 255, 0, 0.75), 0.05em -0.025em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+/* Keyframes untuk teks mengetik */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Keyframes untuk kursor mengetik */
+@keyframes blink-cursor {
+    from, to { border-right-color: transparent; }
+    50% { border-right-color: #00FF00; }
+}
+
+/* Keyframes untuk tangan meluncur dari atas */
+@keyframes slideInTop {
+    from {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Class untuk spinner */
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Class untuk animasi latar belakang hijau-merah */
+.pulsing-bg {
+    animation: pulse-bg 1s infinite alternate;
+}
+
+/* Class untuk animasi latar belakang berkedip */
+.flashing-bw {
+    animation: flash-bw 0.1s infinite alternate;
+}
+
+/* Class untuk animasi fade-in pada hasil */
+.fade-in-result {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Style untuk konten "hacked" */
+.hacked-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFF;
+    width: 100%;
+}
+
+/* Style untuk logo kuda */
+.horse-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk tombol yang meluncur */
+.hacked-button {
+    background-color: #ef4444; /* Merah Tailwind */
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    white-space: nowrap;
+    cursor: pointer;
+    animation: slideInBottom 0.7s ease-out forwards;
+}
+
+.hacked-button:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+/* Style untuk loading bar */
+.loading-bar-container {
+    width: 80%;
+    height: 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.loading-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #2196F3, #FFEB3B, #9C27B0);
+    animation: loading-progress 2s linear forwards; /* Loading bar 2 detik */
+}
+
+/* Style untuk teks berwarna-warni */
+.colorful-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Class baru untuk teks hacking */
+.hacker-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #00FF00; /* Warna hijau neon khas hacker */
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+    animation: hacker-glitch 1s infinite;
+}
+
+/* Class untuk animasi teks mengetik */
+.typing-text {
+    font-family: 'monospace';
+    font-size: 2rem;
+    color: #00FF00;
+    overflow: hidden;
+    border-right: .15em solid #00FF00;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-cursor .75s step-end infinite;
+}
+
+.virus-logo {
+    fill: #dc2626; /* Merah */
+    filter: drop-shadow(0 0 5px #dc2626); /* Efek glow merah */
+}
